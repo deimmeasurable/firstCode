@@ -40,6 +40,7 @@ public class Atm {
     private static void accountMenu() {
        do {
            String prompt2 = """
+                  
                    press 1 to Deposit 
                    press 2 to withdraw
                    press 3 to check balance

@@ -9,6 +9,7 @@ public class Account {
         name = accountName;
         pin = accountPin;
         balance = 50_000;
+
     }
 
     public String getaccountName() {

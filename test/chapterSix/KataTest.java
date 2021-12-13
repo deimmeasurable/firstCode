@@ -104,4 +104,8 @@ public class KataTest {
         int price = value.calculateCopyFor(copyNumber);
         assertEquals(copyNumber * 1000, price);
     }
+
+    // test for assignment on arrays
+
+
 }
