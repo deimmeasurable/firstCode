@@ -52,9 +52,9 @@ public class Atm {
            System.out.println(prompt2);
            System.out.println("Enter a number");
            Scanner input = new Scanner(System.in);
-           int userinput = input.nextInt();
+           int userInput = input.nextInt();
 
-           if (userinput == 1) {
+           if (userInput == 1) {
                System.out.println("Enter Deposit Amount");
 //            int deposit = amount;
                int amount = input.nextInt();
@@ -64,7 +64,7 @@ public class Atm {
                String userPin = input.nextLine();
                System.out.println(demoAccount.getbalance(userPin));
 
-           } else if (userinput == 2) {
+           } else if (userInput == 2) {
                System.out.println("Enter Amount to withdraw: ");
                int amount = input.nextInt();
                input.nextLine();
@@ -74,7 +74,7 @@ public class Atm {
 //               String pin = input.nextLine();
                demoAccount.withdrawal(amount, pin);
 
-           } else if (userinput == 3) {
+           } else if (userInput == 3) {
 //               input.nextInt();
                input.nextLine();
                System.out.println("Enter Account Pin to check balance: ");
@@ -82,7 +82,7 @@ public class Atm {
                int balance = demoAccount.getbalance(pin);
                System.out.println(balance);
 
-           } else if (userinput == 4) {
+           } else if (userInput == 4) {
                userPrompt();
            } else
                System.out.println(0);

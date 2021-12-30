@@ -6,74 +6,99 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BikeTest {
-Bike suzuki;
-
-
+    Bike suzuki;
     @BeforeEach
-    public void startWithThis() {
-     suzuki = new Bike("suzuki",0,0);
- }
+    public void startWithThis(){
 
- @Test
- void canCreateBike(){
-        Bike suzuki = new Bike("suzuki",0,0);
-        assertEquals(suzuki.getName(),"suzuki");
-        assertEquals(suzuki.getAccelerate(),0);
-        assertEquals(suzuki.getDeacceletrate(),0);
-        assertEquals(suzuki.getGear(),0);
- }
-    @Test
-public  void getBikeName(){
-    Bike suzuki = new Bike("suzuki",0,0);
-     String bikeName = suzuki.getbikeName("");
-        assertEquals ("suzuki",bikeName);
-        }
-        @Test
-    public void bikeCanTurnOn(){
-        Bike suzuki =new Bike("suzuki",0,0);
-        suzuki.isOn();
-        assertFalse(suzuki.isOn);
-
-        suzuki.turnOn();
-        assertTrue(suzuki.isOn);
+        suzuki = new Bike("power bike");
 
 
-        }
-        @Test
-        public void bikeCanTurnOff(){
-        suzuki.isOff();
-        assertTrue(suzuki.isOff());
-
-        suzuki.turnOff();
-        assertFalse(suzuki.isOn());
-        }
-        @Test
-   public void bikeCanAccelerate(){
-        suzuki.isOn();
-        suzuki.canAccelerate();
-        assertEquals(0, suzuki.canAccelerate());
-        }
-        @Test
-    public void canIncreaseAcceleration(){
-        suzuki.isOn();
-        suzuki.canAccelerate();
-        suzuki.IncreaseAcceleration();
-        assertEquals(0,suzuki.IncreaseAcceleration());
-        }
-        @Test
-        public void bikeGearOne(){
-        suzuki.isOn();
-        suzuki.canAccelerate();
-        suzuki.IncreaseAcceleration();
-        suzuki.gearRange(1);
-        assertEquals(1, suzuki.gear);
-        }
-        @Test
-    public void setDeacceletrate(){
-        suzuki.isOn();
-        suzuki.Deaccelerate();
-        assertEquals(0,suzuki.getDeacceletrate());
-
-        }
     }
+    @Test
+    public void checkThatBikeIsOnDefaultWhenIsCreated(){
+        assertEquals("power bike",suzuki.getName());
+        assertFalse(suzuki.isOn());
+      assertEquals(0, suzuki.getSpeed());
+    }
+    @Test
+    public void checkIfBikeIsTurnOn(){
+        suzuki.setOn(true);
+        assertTrue(suzuki.isOn());
+    }
+    @Test
+    public void checkIfBikeCanTurnOff(){
+        //Given
+        suzuki.setOn(true);
+        //when
+        suzuki.setOn(false);
+        //assert
+        assertFalse(suzuki.isOn());
+    }
+    @Test
+    public void BikeCanChangeName(){
+        //Given
+        suzuki.isOn();
+        //when
+        suzuki.changeName();
+        assertEquals("power bike",suzuki.getName());
+    }
+        @Test
+    public void BikeIsAtGearOneWhenIsOn(){
+        //Given that
+             suzuki.setOn(true);
+             //when
+            suzuki.getGear();
+            //assert
+            assertEquals(1,suzuki.getGear());
+        }
 
+        @Test
+    public void whenBikeIsOffGearIsZero(){
+        //Given
+            suzuki.isOff();
+            //When
+            suzuki.setGear();
+            //assert
+            assertEquals(0,suzuki.getGear());
+        }
+@Test
+    public  void canSetBikeSpeed(){
+        //given
+        suzuki.isOn();
+        //when
+    suzuki.setSpeed(10);
+    //
+    assertEquals(10,suzuki.getSpeed());
+}
+        @Test
+    public  void BikeAccelerationIsZeroWhenIsOff(){
+        //given
+        suzuki.setOn(false);
+        //when
+            suzuki.accelerate();
+            //assert
+            assertEquals(0,suzuki.accelerate());
+        }
+        @Test
+    public void BikeCanAccelerateByOneWhenIsOn(){
+        //given that
+        suzuki.setOn(true);
+        //when
+            suzuki.accelerate();
+            //assert
+            assertEquals(1, suzuki.getGear());
+            //assertEquals(1,suzuki.getSpeed());
+        }
+        @Test
+    public void BikeAccelerateByTwoWhenIsOn(){
+        //given that
+            suzuki.setOn(true);
+            // when
+            for (int i =0;i<20; i++) {
+
+                suzuki.accelerate();
+            }
+           assertEquals(20,suzuki.getSpeed());
+        }
+
+}
