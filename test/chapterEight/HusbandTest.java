@@ -10,7 +10,6 @@ class HusbandTest {
     public void iyawoDelima(){
         Wife folaWife = new Wife();
         Husband peter = new Husband(folaWife);
-
         assertEquals(folaWife,peter.getWife());
 
 
