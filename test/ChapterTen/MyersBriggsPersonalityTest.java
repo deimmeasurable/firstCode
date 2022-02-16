@@ -22,17 +22,23 @@ class MyersBriggsPersonalityTest {
         assertTrue(person.asAUser());
     }
     @Test
-    public void myersBriggsPersonalityAsOneUser(){
+    public void myersBriggsPersonalityAsOneUserTest(){
         person.setUser("funke");
         assertEquals("funke",person.getUser());
 
     }
     @Test
-    public void userCanAttemptQuestionsTest(){
-        person.canAttemptQuestion(){
+    public void myersBriggsPersonalityCanHaveQuestionnaire(){
+        person.canDisplayQuestionToUser(new String[]{"Question1:\n a. expend energy, enjoy groups or b. conserve energy, enjoy one-on-one"});
 
-        }
+//        assertEquals(1,person.);
     }
-
+//    @Test
+//    public void userCanAttemptQuestionsTest(){
+//        person.canAttemptQuestion(){
+//
+//        }
+//    }
+//
 
 }
