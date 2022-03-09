@@ -11,30 +11,26 @@ public class SumOfDigit {
 
 
     public static void fourDigitCollection(){
-       // System.out.println("enter four digit number");
 
-        int firstDigit ;
-        int secondDigit;
-        int thirdDigit;
-        int fourDigit;
-        int totalDigit=0;
 
-        firstDigit= number/1000;
+
+
+        int firstDigit= number/1000;
         System.out.println("The value of the firstDigit is  "+firstDigit);
 
-        secondDigit=(number % 1000)/100;
+        int secondDigit=(number % 1000)/100;
         System.out.println("The value of the secondDigit is  "+secondDigit);
 
-        thirdDigit=(number % 100)/10;
+       int thirdDigit=(number % 100)/10;
         System.out.println("The value of the thirdDigit is "+thirdDigit);
 
-        fourDigit=(number % 10)/1;
+        int fourDigit= (number % 10);
         System.out.println("The value of the fourDigit is  "+fourDigit);
 
-        totalDigit=firstDigit+secondDigit+thirdDigit+fourDigit;
+        int totalDigit= firstDigit + secondDigit + thirdDigit + fourDigit;
 
 
-        System.out.println("The total digit is  "+totalDigit);
+        System.out.println("The total digit is  " + totalDigit);
 
 
 

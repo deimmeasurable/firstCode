@@ -1,8 +1,8 @@
 package selfPractise;
 
-public class DivisibleBy5 {
+public class DivisibleBy_5 {
     public static void main(String[] args) {
-        DivisibleBy5 five=new DivisibleBy5();
+        DivisibleBy_5 five=new DivisibleBy_5();
         five.isDivisibleBy5(60);
     }
 

@@ -15,9 +15,9 @@ public class TabularOutput {
 int []number = new int[]{1,2,3,4,5};
         System.out.println("N"+ "\tN^2" +  "\tN^3"  +  "\tN^4");
 
-        for (int i = 1; i<=number.length; i++) {
-       //     System.out.println(number[i]);
-            System.out.println((int)Math.pow(i,1)+ "\t"+((int)Math.pow(i,2))+"\t"+((int)Math.pow(i,3))+"\t"+((int)Math.pow(i,4)));
+        for (int value = 1; value<=number.length; value++) {
+
+            System.out.println((int)Math.pow(value,1)+ "\t"+((int)Math.pow(value,2))+"\t"+((int)Math.pow(value,3))+"\t"+((int)Math.pow(value,4)));
 
         }
 }

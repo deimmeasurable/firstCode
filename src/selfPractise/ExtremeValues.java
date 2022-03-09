@@ -2,7 +2,7 @@ package selfPractise;
 
 import java.util.Scanner;
 
-public class Extremes {
+public class ExtremeValues {
 
     public static void main(String[] args) {
 

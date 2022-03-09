@@ -12,11 +12,10 @@ public class sportRecommender {
 
 
 
+            boolean isTrue=weather==20 ||weather ==30;
+            if(isTrue) System.out.println("It's lovely weather for sport today");
 
-            if(weather==20 ||weather ==30){
-        System.out.println("It's lovely weather for sport today");
 
-    }
             if(weather ==10||weather==40) {
         System.out.println("It's reasonable weather for sport today");
     }

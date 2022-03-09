@@ -1,8 +1,8 @@
 package selfPractise;
 
-public class Diamond {
+public class DiamondDisplay {
     public static void main(String[] args) {
-        Diamond shape=new Diamond();
+        DiamondDisplay shape=new DiamondDisplay();
         shape.printDiamond();
     }
 

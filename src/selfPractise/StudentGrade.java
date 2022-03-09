@@ -26,7 +26,7 @@ public class StudentGrade {
             System.out.println("Enter studentName");
             String name=scan.nextLine();
             System.out.println("Enter a score");
-            int score = Integer.valueOf(scan.nextInt());
+            int score = scan.nextInt();
             scan.nextLine();
 
           if (score >= 90) {

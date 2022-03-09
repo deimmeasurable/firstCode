@@ -25,36 +25,52 @@ public class MultiplicationForStudent {
 
                     while (number!=-1) {
                         if (number == totalRandomNumber) {
-                            if(numberOfPlays<5) {
+                            if(numberOfPlays<10) {
+                                switch (numberOfPlays) {
+                                    case 1 -> System.out.println("very good");
+                                    case 2 -> System.out.println("Excellent");
+                                    case 3 -> System.out.println("Nice work");
+                                    case 4 -> System.out.println("keep up the good work");
+                                }
+                                numberOfPlays=(int) (Math.random() * 4 + 1);
                                 System.out.println("congratulation, enter yes to keep playing and no to stop playing");
                                 gameStatus = input.next().toLowerCase();
                                 numberOfPlays++;
                                 correctAnswer++;
-                                correctAnswerPercentage=(double)(numberOfPlays * correctAnswer)/100;
+                                System.out.println(correctAnswer);
                                 break;
                             }
                             else {
                                 System.out.println("good!! but after many trials");
+                                switch (numberOfPlays) {
+                                                case 1 -> System.out.println("No. Please try again");
+                                                case 2 -> System.out.println("Wrong. Try once more");
+                                                case 3 -> System.out.println("Don't give up!");
+                                                case 4 -> System.out.println("No. keeping Trying");
+                                }
+                                numberOfPlays=(int)(Math.random()* 4 + 1);
                                 System.out.println("you played " + numberOfPlays + " times.");
+                                correctAnswerPercentage=(double)(correctAnswer/10)*100;
+                                System.out.println(correctAnswerPercentage);
                                 System.exit(0);
                             }
-                        } else if (number != totalRandomNumber) {
+                        } else if(true){
                             System.out.println("oops!, try again");
                             System.out.println("attempt the question again");
                             number = input.nextInt();
                             numberOfPlays++;
                             correctAnswer++;
-                            correctAnswerPercentage=(double)(numberOfPlays * correctAnswer)/100;
 
                             if (number==-1) System.exit(0);
-                        }else if (number==-1) System.exit(0);
+                        }
 
 //
                     }
-                System.out.println("you played " + numberOfPlays + " times.");
+           // correctAnswerPercentage=(double)(numberOfPlays * correctAnswer)/100;
+            System.out.println("you played " + numberOfPlays + " times.");
             System.out.println("the correctAnswer score is "+correctAnswer);
-            System.out.println("the percentage score is "+ Math.ceil(correctAnswerPercentage));
-                }
+          //  System.out.println("the percentage score is "+ Math.ceil(correctAnswerPercentage));
+        }
 
         }
     }

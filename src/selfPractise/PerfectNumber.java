@@ -12,7 +12,6 @@ public class PerfectNumber {
         for (int index = 1; index < number; index++) {
 
             if (number % index == 0) {
-       //         System.out.println(index);
                 total+=index;
             }
 

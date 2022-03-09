@@ -14,8 +14,8 @@ public class SumOfSeries {
         for ( number = 1; number <=100 ; number++) {
             total+=number;
 
-            System.out.println(number +"\t"+total);
 
         }
+        System.out.println(number +"\t"+total);
     }
 }
