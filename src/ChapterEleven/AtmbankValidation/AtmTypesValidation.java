@@ -78,6 +78,7 @@ public class AtmTypesValidation {
     }
 
     public String getSumOfOddDigit() {
+        System.out.println("--->sumofodddigit");
         int sum = 0;
         if (number.length() % 2 != 0) {
             for (int j = number.length() - 1; j >= 0; j--) {
@@ -89,16 +90,39 @@ public class AtmTypesValidation {
 
                     }
                     sum +=collectNumber;
-
+                    System.out.println(sum);
 
                 }
-            }
 
+                System.out.println(sum);
+            }
+                System.out.println(sum);
+            }else{
+            for (int j = number.length() - 1; j >= 0; j--) {
+                if (j % 2 != 0) {
+                    int collectNumber = Character.getNumericValue(number.charAt(j)) * 2;
+                    String sumNumber= String.valueOf(collectNumber);
+                    if(collectNumber > 9){
+                        collectNumber =Character.getNumericValue(sumNumber.charAt(0)) + Character.getNumericValue(sumNumber.charAt(1));
+
+                    }
+                    sum +=collectNumber;
+                    System.out.println(sum);
+
+                }
+
+                System.out.println(sum);
+            }
         }
+
         return String.valueOf(Integer.valueOf(sum));
 
-    }
+        }
+
+
+
     public String getSumOfEvenDigit() {
+        System.out.println("--->getsumofevendigit");
         int sum = 0;
         if (number.length() % 2 == 0) {
             for (int i = number.length() - 1; i >= 0; i--) {
@@ -113,6 +137,7 @@ public class AtmTypesValidation {
 
                 }
             }
+            System.out.println(sum);
         }
         return String.valueOf(Integer.valueOf(sum));
     }
@@ -121,43 +146,20 @@ public class AtmTypesValidation {
         return currentCard;
     }
     public String getSumOfEvenAndSumOfOddNumber() {
-        int totalSum = 0;
-        int sumOfOddNumber = 0;
-        int sumOfEvenNumber = 0;
-        if (number.length() % 2 != 0) {
-            for (int j = number.length() - 1; j >= 0; j--) {
-                if (j % 2 != 0) {
-                    int collectNumber = Character.getNumericValue(number.charAt(j)) * 2;
-                    String sumNumber= String.valueOf(collectNumber);
-                    if(collectNumber > 9){
-                        collectNumber =Character.getNumericValue(sumNumber.charAt(0)) + Character.getNumericValue(sumNumber.charAt(1));
+        System.out.println("---->here in getsumofevenandodd");
+        String sumOfOdd = null;
+        String sumOfEven = null;
+        sumOfOdd = getSumOfOddDigit();
+        System.out.println(sumOfOdd);
+        sumOfEven = getSumOfEvenDigit();
 
-                    }
-                    sumOfOddNumber +=collectNumber;
+        System.out.println(sumOfEven);
+        return String.valueOf(Integer.valueOf(sumOfEven) + Integer.valueOf(sumOfOdd));
+//         totalsum=0;
+//
+//        System.out.println(totalsum);
+//        return String.valueOf(Integer.valueOf(totalsum));
 
-
-                }
-            }
-
-        }
-        if (number.length() % 2 == 0) {
-            for (int i = number.length() - 1; i >= 0; i--) {
-                if (i % 2 == 0) {
-                    int multiplication = Character.getNumericValue(number.charAt(i)) * 2;
-                    String multiply = String.valueOf( multiplication);
-                    if (multiplication > 9) {
-                        multiplication =Character.getNumericValue(multiply.charAt(0)) + Character.getNumericValue(multiply.charAt(1));
-
-                    }
-                    sumOfEvenNumber += multiplication;
-
-                }
-            }
-        }
-        int totalsum=0;
-        totalsum=sumOfEvenNumber+sumOfOddNumber;
-        return String.valueOf(Integer.valueOf(totalsum));
 
     }
-
 }

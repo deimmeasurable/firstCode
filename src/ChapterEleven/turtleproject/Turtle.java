@@ -98,8 +98,20 @@ public class Turtle {
                 if (column + noOfStep > pad.getFloor().length) ;
                 if (newMove > sketchPadRowLength) throw new InvalidMoveException("turtle don fall");
             }
-
+            case WEST -> {
+                int newMove =column + noOfStep;
+                int sketchPadRowLength = pad.getFloor()[row].length;
+                if(column +noOfStep > pad.getFloor().length);
+                if(newMove > sketchPadRowLength) throw new InvalidMoveException("turtle don fall");
+            }
+            case NORTH -> {
+                int newMove =row + noOfStep;
+                int sketchPadRowLength = pad.getFloor()[column].length;
+                if(row +noOfStep > pad.getFloor().length);
+                if(newMove > sketchPadRowLength) throw new InvalidMoveException("turtle don fall");
+            }
         }
+
     }
 
     private void write(int noOfSteps, SketchPad sketchPad) {
@@ -122,6 +134,12 @@ public class Turtle {
             case WEST -> {
                 for (int i = column; i < column - noOfSteps; i++) {
                     floor[row][i] = 1;
+                }
+            }
+            case NORTH -> {
+                for (int i = row; i < row-noOfSteps; i++) {
+                    floor[i][column]=1;
+
                 }
             }
         }

@@ -204,6 +204,7 @@ class TurtleTest {
         assertEquals(1, pad.getFloor()[4][0]);
         pad.display();
     }
+
     @Test
     public void whenTurtleGoesOutOfSketchpad_exceptionIsThrowMovingSouth() {
         turtle.penDown();
@@ -228,15 +229,62 @@ class TurtleTest {
         //when
         SketchPad pad = new SketchPad(5, 5);
         turtle.moveWhenPenIsDown(5, pad);
-        assertEquals(new Position(0, 0), turtle.getCurrentPosition());
-        //assert
+        assertEquals(new Position(0, -4), turtle.getCurrentPosition());
+        //assert it move to west
         assertEquals(1, pad.getFloor()[0][4]);
         assertEquals(1, pad.getFloor()[0][3]);
         assertEquals(1, pad.getFloor()[0][2]);
         assertEquals(1, pad.getFloor()[0][1]);
         assertEquals(1, pad.getFloor()[0][0]);
-        assertEquals(new Position(0, 5), turtle.getCurrentPosition());
+
+        assertEquals(new Position(0, -5), turtle.getCurrentPosition());
         pad.display();
 
     }
-}
+
+    @Test
+    public void turtleCanWrite_WhenPenIsDownMovingNorthTest() {
+        //given
+        turtle.penDown();
+
+        //when
+        turtle.turnLeft();
+        SketchPad pad = new SketchPad(5, 0);
+        turtle.moveWhenPenIsDown(5, pad);
+        assertEquals(new Position(-4, 0), turtle.getCurrentPosition());
+    }
+
+    @Test
+    public void whenTurtleGoesOutOfSketchpad_exceptionIsThrowMovingWest() {
+        turtle.penDown();
+        turtle.turnRight();
+        turtle.turnRight();
+        SketchPad pad = new SketchPad(5, 5);
+        turtle.moveWhenPenIsDown(5, pad);
+//       assertThrows(InvalidMoveException.class,()->turtle.moveWhenPenIsDown(5,pad));
+        try {
+            turtle.moveWhenPenIsDown(5, pad);
+        } catch (InvalidMoveException eee) {
+            assertEquals(InvalidMoveException.class, eee.getClass());
+            assertEquals(InvalidMoveException.class, eee.getClass());
+        }
+    }
+    @Test
+    public void whenTurtleGoesOutOfSketchpad_exceptionIsThrowMovingNorth(){
+        turtle.penDown();
+        turtle.turnLeft();
+        SketchPad pad = new SketchPad(5, 5);
+        turtle.moveWhenPenIsDown(5, pad);
+//       assertThrows(InvalidMoveException.class,()->turtle.moveWhenPenIsDown(5,pad));
+        try {
+            turtle.moveWhenPenIsDown(5, pad);
+        } catch (InvalidMoveException eee) {
+            assertEquals(InvalidMoveException.class, eee.getClass());
+            assertEquals(InvalidMoveException.class, eee.getClass());
+        }
+    }
+
+    }
+
+
+

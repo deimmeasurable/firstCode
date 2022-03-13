@@ -139,13 +139,13 @@ class AtmTypesValidationTest {
     void test_sumOfOddNumber_And_SumEvenNumber_can_Be_Added(){
         atm=new AtmTypesValidation();
 
-        atm.setAtmNumber("1234567891013");
+//        atm.setAtmNumber("1234567891013");
 //        assertEquals("26", atm.getSumOfOddDigit());
 
         atm.setAtmNumber("12345678910138");
 //        assertEquals("29", atm.getSumOfEvenDigit());
 
-
+        assertEquals(21, atm.getSumOfOddDigit());
         assertEquals("55",atm.getSumOfEvenAndSumOfOddNumber());
     }
 }
