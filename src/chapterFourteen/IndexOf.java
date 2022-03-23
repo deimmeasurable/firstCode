@@ -1,5 +1,8 @@
 package chapterFourteen;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 public class IndexOf {
 
     private String string;
@@ -43,14 +46,32 @@ public class IndexOf {
         }
         return indexOfLastValue;
     }
+    public void capitaliseEveryFirstWord(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter a word");
+        String word = scanner.nextLine();
+
+//        String word=" ";
+        StringBuilder text = new StringBuilder();
+        for (int i = 0; i <word.length() ; i++) {
+            if(word.charAt(i)==' ') {
+                String.valueOf(word.charAt(0)).equals(word.toUpperCase(Locale.ROOT));
+
+            }
+        }
+        System.out.print(text);
+        text.append(word);
+//        return text;
+    }
 
     public static void main(String[] args) {
         IndexOf indexValue = new IndexOf("helen");
-        indexValue._getTheIndexValueOfTheWord('e');
-        System.out.println(indexValue.getLastIndexOfWord('n'));
-        System.out.println(indexValue.createACountMethodInString('e'));
-        System.out.println("".matches("[A-Za-z]*"));
-        System.out.println("".replaceFirst("//d","eight"));
+//        indexValue._getTheIndexValueOfTheWord('e');
+//        System.out.println(indexValue.getLastIndexOfWord('n'));
+//        System.out.println(indexValue.createACountMethodInString('e'));
+//        System.out.println("".matches("[A-Za-z]*"));
+//        System.out.println("".replaceFirst("//d","eight"));
+         indexValue.capitaliseEveryFirstWord();
     }
 
 }
