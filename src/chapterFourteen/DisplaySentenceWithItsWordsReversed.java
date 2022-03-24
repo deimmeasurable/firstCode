@@ -10,20 +10,23 @@ public class DisplaySentenceWithItsWordsReversed {
 
         System.out.println("enter a number");
         String number = scanner.nextLine();
-        String[] token = number.split(" ");
-        System.out.printf("the number of element %d%n: there are:", token.length);
 
-            StringBuilder string = new StringBuilder();
-        for (int i =0 ; i < token.length ; i++) {
-            string.append(token[i]);
+//      String token = number.split(" ");
+        String token = number;
+        System.out.printf("the number of element %d%n: there are:", token.length());
 
-            string.reverse();
+        StringBuilder string = new StringBuilder();
+        for (int i = token.length() - 1; i >= 0; i--) {
+            if ((token.charAt(i) != token.length())) {
+                string.append(token.charAt(i));
+
+//            string.reverse();
+            }
+
         }
-        System.out.println(string+ " ");
-
-        }
+        System.out.println(string + " ");
     }
-
+}
 
 //        public static void reverse () {
 //            String value=" ";
