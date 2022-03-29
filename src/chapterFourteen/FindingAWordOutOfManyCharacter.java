@@ -3,7 +3,7 @@ package chapterFourteen;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StringCounter {
+public class FindingAWordOutOfManyCharacter {
     public static void main(String[] args) {
         String word ="balloonballoon";
         String[] theWord = {"b", "a", "l", "o", "n"};
