@@ -34,16 +34,17 @@ class DuplicateEliminationTest {
     //given
         duplicateElimination.collectedFirstName("dele");
         duplicateElimination.collectedFirstName("fola");
+        duplicateElimination.collectedFirstName("fola");
         duplicateElimination.collectedFirstName("seyi");
         duplicateElimination.collectedFirstName("seyi");
 
         //when
-    duplicateElimination.checkThatNoDuplicateNames("dele");
-    duplicateElimination.checkThatNoDuplicateNames("seyi");
+//    duplicateElimination.checkThatNoDuplicateNames("dele");
+//    duplicateElimination.checkThatNoDuplicateNames("seyi");
 
 
         //assert
-        assertEquals(2,duplicateElimination.count());
+        assertEquals(3,duplicateElimination.count());
         }
     }
 
